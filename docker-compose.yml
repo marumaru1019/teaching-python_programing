@@ -1,0 +1,13 @@
+version: "3.9"
+services:
+  jupyterlab:
+    image: jupyter/datascience-notebook
+    container_name: jupyterlab
+    ports:
+      - "10000:8888"
+    environment:
+      - JUPYTER_ENABLE_LAB=yes
+      - TZ=Asia/Tokyo
+    volumes:
+      - .:/home/jovyan/work
+    command: sh work/go.sh
