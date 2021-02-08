@@ -1,7 +1,7 @@
-version: "3.9"
+version: "3.5"
 services:
   jupyterlab:
-    image: jupyter/datascience-notebook
+    image: jupyter/tensorflow-notebook:latest
     container_name: jupyterlab
     ports:
       - "10000:8888"
@@ -9,5 +9,5 @@ services:
       - JUPYTER_ENABLE_LAB=yes
       - TZ=Asia/Tokyo
     volumes:
-      - .:/home/jovyan/work
-    command: sh work/go.sh
+      - .:/home/javyan/work
+    command: sh /home/javyan/work/go.sh

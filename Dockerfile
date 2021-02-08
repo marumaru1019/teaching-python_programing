@@ -1,7 +1,7 @@
-FROM jupyter/datascience-notebook
+ARG BASE_CONTAINER=jupyter/tensorflow-notebook:latest
+FROM $BASE_CONTAINER
 
+COPY requirements-data.txt requirements-data.txt
+RUN pip install -r requirements-data.txt
 
-COPY requirements-data.txt /tmp/requirements-data.txt
-RUN pip install -r /tmp/requirements-data.txt
-
-# CMD "start-notebook.sh --NotebookApp.token=''"
+CMD "start-notebook.sh --NotebookApp.token=''"
